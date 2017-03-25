@@ -1,0 +1,3 @@
+[submodule "hs-weather"]
+	path = hs-weather
+	url = https://github.com/skamsie/hs-weather.git
