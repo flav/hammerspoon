@@ -14,4 +14,6 @@ weather.start({
 })
 
 
+require("mouseinthemiddle")
+
 hs.notify.new({title='Hammerspoon', informativeText='Ready to rock 🤘'}):send()
