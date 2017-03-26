@@ -1,17 +1,22 @@
 local eventtap = hs.eventtap
 local eventTypes = hs.eventtap.event.types
 local message = require('status-message')
+local windowLayoutMode = require('windowmode')
+
 -- local log = hs.logger.new('supermode.lua', 'debug')
 
 statusMessage = message.new('(^S)uper Duper Mode')
 
 k = hs.hotkey.modal.new('ctrl', 's')
 
+
 closeAllTheThings = function()
+  windowLayoutMode:exit()
   k:exit()
 end
 
 function k:entered()
+  inWindowMode = false;
 
   overlayKeyboard = eventtap.new({ eventTypes.keyDown }, function(event)
     local keyPressed = hs.keycodes.map[event:getKeyCode()]
@@ -37,6 +42,17 @@ function k:entered()
           return true
         end
       end
+    end
+
+    if keyPressed == 'w' then
+      inWindowMode = true
+      statusMessage:hide()
+      windowLayoutMode:enter()
+      return true
+    end
+    if inWindowMode then
+      -- let window mode triggers take over
+      return false
     end
 
     local replacements = {
