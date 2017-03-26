@@ -51,9 +51,10 @@ function k:entered()
       return false
     end
 
-    -- not special to us - don't emmit the key
-    -- TODO: possible alert here - screen flash since no keys will work
-    return true
+    -- see how this feels: if a key is hit which is not defined in this mode
+    -- we break out of SD mode and carry on
+    closeAllTheThings()
+    return false
   end):start()
 
   statusMessage:show()
