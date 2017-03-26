@@ -24,6 +24,21 @@ function k:entered()
 
     -- log.d('Event keyboard detected:', hs.inspect(modifiersPressed), keyPressed )
 
+    -- Application launchers
+    local applicationLaunchers = {
+      ['1'] = "iTerm",
+      ['2'] = "Google Chrome",
+      ['3'] = "Sublime Text",
+      ['4'] = 'TextEdit',
+      ['5'] = 'Dash',
+      ['0'] = "Slack",
+    }
+    if applicationLaunchers[keyPressed] then
+      hs.application.launchOrFocus(applicationLaunchers[keyPressed])
+      closeAllTheThings()
+      return true
+    end
+
     local quitTriggers = {
       {mod='', key='escape'},
       {mod='', key='q'},
