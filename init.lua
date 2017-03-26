@@ -18,4 +18,10 @@ require("mouseinthemiddle")
 
 require("supermode")
 
+-- http://thume.ca/2016/07/16/advanced-hackery-with-the-hammerspoon-window-manager/
+local hints = require 'hs.hints'
+hs.hotkey.bind({'ctrl'}, 'y', nil, function()
+  hints.windowHints()
+end)
+
 hs.notify.new({title='Hammerspoon', informativeText='Ready to rock 🤘'}):send()
