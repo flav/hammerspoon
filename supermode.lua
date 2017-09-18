@@ -31,6 +31,9 @@ function k:entered()
       ['3'] = "Sublime Text",
       ['4'] = 'TextEdit',
       ['5'] = 'Dash',
+      ['6'] = 'Simplenote',
+      ['7'] = 'Twitter',
+      ['8'] = 'Mail',
       ['0'] = "Slack",
     }
     if applicationLaunchers[keyPressed] then
