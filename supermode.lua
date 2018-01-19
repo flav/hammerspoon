@@ -7,6 +7,9 @@ local message = require('status-message')
 statusMessage = message.new('(^S)uper Duper Mode')
 
 k = hs.hotkey.modal.new('ctrl', 's')
+hs.hotkey.bind('ctrl', ';', function()
+  k:enter()
+end)
 
 
 closeAllTheThings = function()
