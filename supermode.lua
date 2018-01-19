@@ -26,7 +26,7 @@ function k:entered()
 
     -- Application launchers
     local applicationLaunchers = {
-      ['1'] = "iTerm",
+      ['1'] = "Terminal",
       ['2'] = "Google Chrome",
       ['3'] = "Sublime Text",
       ['4'] = 'TextEdit',
