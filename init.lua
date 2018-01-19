@@ -18,6 +18,13 @@ require("mouseinthemiddle")
 
 require("supermode")
 
+
+-- Defeating paste blocking
+-- http://www.hammerspoon.org/go/#pasteblock
+hs.hotkey.bind({"cmd", "alt"}, "V", function()
+  hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+end)
+
 hs.hotkey.bind("ctrl", "[", function()
   hs.eventtap.keyStroke(nil, "escape")
   return true
