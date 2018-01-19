@@ -2,7 +2,7 @@ local eventtap = hs.eventtap
 local eventTypes = hs.eventtap.event.types
 local message = require('status-message')
 
--- local log = hs.logger.new('supermode.lua', 'debug')
+local log = hs.logger.new('supermode.lua', 'debug')
 
 statusMessage = message.new('(^S)uper Duper Mode')
 
