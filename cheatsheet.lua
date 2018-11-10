@@ -6,13 +6,20 @@ local screen = require 'hs.screen'
 local styledtext = require 'hs.styledtext'
 local log = hs.logger.new('cheatsheet.lua', 'debug')
 
+function script_path()
+   local str = debug.getinfo(2, "S").source:sub(2)
+   return str:match("(.*/)")
+end
+
+local cheatSheetFile = script_path() .. 'cheatsheet.txt'
+local editApplication = "Sublime Text" -- "TextEdit"
 
 local cheatsheet = {}
 
 cheatsheet.new = function()
   local buildParts = function()
     local frame = screen.primaryScreen():frame()
-    local messageText = io.open("cheatsheet.txt", "r"):read('*all')
+    local messageText = io.open(cheatSheetFile, "r"):read('*all')
 
     local styledTextAttributes = {
       font = { name = 'Monaco', size = 24 },
@@ -45,8 +52,20 @@ cheatsheet.new = function()
     return background, text
   end
 
+  local editCheatsheet = function()
+    local script = string.format(
+      'tell application "%s" to open POSIX file "%s"',
+      editApplication,
+      cheatSheetFile
+    )
+    log.d("running script: ", script)
+    hs.osascript.applescript(script)
+    hs.application.launchOrFocus(editApplication)
+  end
+
   return {
     _buildParts = buildParts,
+    _editCheatsheet = editCheatsheet,
     _keyboard = nil,
     show = function(self)
       self:hide()
@@ -57,6 +76,10 @@ cheatsheet.new = function()
 
       self._keyboard = eventtap.new({ eventTypes.keyDown }, function(event)
           local keyPressed = hs.keycodes.map[event:getKeyCode()]
+
+          if keyPressed == 'e' then
+            self._editCheatsheet()
+          end
           self:hide()
           return true
       end):start()
