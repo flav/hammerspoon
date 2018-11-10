@@ -18,11 +18,20 @@ require("mouseinthemiddle")
 
 require("supermode")
 
+function sleep(n)
+  os.execute("sleep " .. tonumber(n))
+end
+
 
 -- Defeating paste blocking
 -- http://www.hammerspoon.org/go/#pasteblock
 hs.hotkey.bind({"cmd", "alt"}, "V", function()
-  hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+  -- hs.eventtap.keyStrokes(hs.pasteboard.getContents())
+
+  for k in hs.pasteboard.getContents():gmatch"." do
+    hs.eventtap.keyStrokes(k)
+    sleep(0.02)
+  end
 end)
 
 hs.hotkey.bind("ctrl", "[", function()
