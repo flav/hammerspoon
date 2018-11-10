@@ -32,7 +32,7 @@ function k:entered()
       ['4'] = 'TextEdit',
       ['5'] = 'Dash',
       ['6'] = 'Simplenote',
-      ['7'] = 'Twitter',
+      ['7'] = 'TweetDeck',
       ['8'] = 'Mail',
       ['0'] = "Slack",
     }
