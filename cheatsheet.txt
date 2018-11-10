@@ -1,0 +1,37 @@
+- Sublime Text ---------------------
+
+
+⌘ d multi next
+^⌘ g select all
+⌘ ⇧ d dupe line
+
+
+- BASH ---------------------
+^b ack   ^f orward
+alt-b alt-f  by word
+
+^u ⇤ delete up to beginning
+^k ⇥ kill to end
+
+^h backspace
+^d delete
+
+!$   last argument (<esc>.)
+^g  Escape history search
+
+
+- TMUX ---------------------
+tmux new -s foo
+tmux at -t foo
+_ == prefix == ^g
+_w window list
+_{ _} rotate/move splits
+_o rotate cursor
+_^o rotate split
+
+_ [option]1 - 5  layouts
+https://gist.github.com/andreyvit/2921703
+
+
+
+⌘ . cancel

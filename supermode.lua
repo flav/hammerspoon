@@ -1,6 +1,7 @@
 local eventtap = hs.eventtap
 local eventTypes = hs.eventtap.event.types
 local message = require('status-message')
+local cheatsheet = require('cheatsheet')
 
 local log = hs.logger.new('supermode.lua', 'debug')
 
@@ -23,6 +24,12 @@ function k:entered()
     local modifiersPressed = event:getFlags()
 
     -- log.d('Event keyboard detected:', hs.inspect(modifiersPressed), keyPressed )
+
+    if keyPressed == 'c' then
+      cheatsheet:show()
+      closeAllTheThings()
+      return true
+    end
 
     -- Application launchers
     local applicationLaunchers = {
