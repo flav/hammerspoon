@@ -47,6 +47,7 @@ function k:entered()
       {mod='', key='q'},
       {mod='ctrl', key='s'},
       {mod='ctrl', key='['},
+      {mod='ctrl', key=';'},
     }
     for k,v in pairs(quitTriggers) do
       if v.key == keyPressed then
