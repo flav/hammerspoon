@@ -5,13 +5,13 @@ hs.hotkey.bind({'ctrl'}, '`', nil, function()
 end)
 
 
-local weather = require("hs-weather")
-weather.start({
-  geolocation= false,
-  location="Ann Arbor, MI",
-  refresh=1800,
-  units="F"
-})
+-- local weather = require("hs-weather")
+-- weather.start({
+--   geolocation= false,
+--   location="Ann Arbor, MI",
+--   refresh=1800,
+--   units="F"
+-- })
 
 
 require("mouseinthemiddle")
