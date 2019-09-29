@@ -1,37 +1,31 @@
 - Sublime Text ---------------------
-
-
 ⌘ d multi next
 ^⌘ g select all
 ⌘ ⇧ d dupe line
 
-
 - BASH ---------------------
 ^b ack   ^f orward
 alt-b alt-f  by word
-
-^u ⇤ delete up to beginning
-^k ⇥ kill to end
-
-^h backspace
-^d delete
+^u ⇤ delete up to beginning    ^k ⇥ kill to end
+^h backspace                    ^d delete
 
 !$   last argument (<esc>.)
 ^g  Escape history search
 
-
 - TMUX ---------------------
-tmux new -s foo
-tmux at -t foo
-_ == prefix == ^g
+tmux new -s foo    tmux at -t foo
+_ is prefix ^g
 _w window list
 _{ _} rotate/move splits
 _o rotate cursor
 _^o rotate split
 
+:break-pane   :join-pain -t %%
+:move-pane -t :3.2  send pane to window 3 pane 2
 _ [option]1 - 5  layouts
 https://gist.github.com/andreyvit/2921703
 
-
-
 ⌘ . cancel
+--
+
+v is character-wise, V is line-wise, ctrl-V is blockwise
