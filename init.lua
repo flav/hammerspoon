@@ -20,6 +20,8 @@ require("supermode")
 
 require("window-mash")
 
+require("utc-time")
+
 function sleep(n)
   os.execute("sleep " .. tonumber(n))
 end
