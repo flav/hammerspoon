@@ -18,6 +18,8 @@ require("mouseinthemiddle")
 
 require("supermode")
 
+require("window-mash")
+
 function sleep(n)
   os.execute("sleep " .. tonumber(n))
 end
