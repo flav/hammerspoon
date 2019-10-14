@@ -32,4 +32,4 @@ function mouseCenter()
 
 end
 
-hs.hotkey.bind({"cmd","alt","shift"}, "h", mouseCenter)
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "h", mouseCenter)
