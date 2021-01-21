@@ -22,6 +22,8 @@ require("window-mash")
 
 require("utc-time")
 
+require("zoom-killer")
+
 function sleep(n)
   os.execute("sleep " .. tonumber(n))
 end
