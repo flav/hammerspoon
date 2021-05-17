@@ -1,7 +1,9 @@
 
+local log = hs.logger.new('zoom-killer.lua', 'debug')
+
 -- https://github.com/Hammerspoon/hammerspoon/issues/1220
 
-foobar = hs.eventtap.new({ hs.eventtap.event.types.NSSystemDefined }, function(event)
+foobar = hs.eventtap.new({ hs.eventtap.event.types.systemDefined }, function(event)
     -- http://www.hammerspoon.org/docs/hs.eventtap.event.html#systemKey
     flags = event:getFlags()
     event = event:systemKey()
@@ -9,6 +11,8 @@ foobar = hs.eventtap.new({ hs.eventtap.event.types.NSSystemDefined }, function(e
     local next = next
     -- Check empty table
     if next(event) then
+        -- log.d('Event keyboard detected')
+
         if event.key == 'EJECT' and event.down and flags.fn then
             print('This is my EJECT key event')
             hs.osascript.applescript([[
