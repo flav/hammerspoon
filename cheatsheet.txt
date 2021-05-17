@@ -21,7 +21,8 @@ _o rotate cursor
 _^o rotate split
 
 :break-pane   :join-pain -t %%
-:move-pane -t :3.2  send pane to window 3 pane 2
+:move-pane -t :3.2 # send pane to window 3 pane 2
+:swap-window -t -1 # target one left [+1 right]
 _ [option]1 - 5  layouts
 https://gist.github.com/andreyvit/2921703
 
