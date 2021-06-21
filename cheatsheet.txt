@@ -20,7 +20,8 @@ _{ _} rotate/move splits
 _o rotate cursor
 _^o rotate split
 
-:break-pane   :join-pain -t %%
+(-s|-t <session:window.pane> source/target)
+:break-pane   :join-pain -s :6.1 # bring pane 6.1 here
 :move-pane -t :3.2 # send pane to window 3 pane 2
 :swap-window -t -1 # target one left [+1 right]
 _ [option]1 - 5  layouts
