@@ -1,8 +1,8 @@
 
 -- Use Control+` to reload Hammerspoon config
-hs.hotkey.bind({'ctrl'}, '`', nil, function()
-  hs.reload()
-end)
+-- hs.hotkey.bind({'ctrl'}, '`', nil, function()
+--   hs.reload()
+-- end)
 
 
 -- local weather = require("hs-weather")
