@@ -1,33 +1,30 @@
 - Sublime Text ---------------------
-⌘ d multi next
-^⌘ g select all
-⌘ ⇧ d dupe line
+⌘ d multi next   ^⌘ g select all   ⌘ ⇧ d dupe line
 
 - BASH ---------------------
 ^b ack   ^f orward
 alt-b alt-f  by word
-^u ⇤ delete up to beginning    ^k ⇥ kill to end
-^h backspace                    ^d delete
-
-!$   last argument (<esc>.)
-^g  Escape history search
+^u ⇤ delete up to beginning        ^k ⇥ kill to end
+^h backspace                       ^d delete
+!$   last argument (<esc>.)        ^g  Escape history search
 
 - TMUX ---------------------
-tmux new -s foo    tmux at -t foo
-_ is prefix ^g
-_w window list
+tmux new -s foo                    tmux at -t foo
+_ is prefix ^g                     _w window list
+_o rotate cursor                   _^o rotate split
 _{ _} rotate/move splits
-_o rotate cursor
-_^o rotate split
 
 (-s|-t <session:window.pane> source/target)
-:break-pane   :join-pain -s :6.1 # bring pane 6.1 here
-:move-pane -t :3.2 # send pane to window 3 pane 2
-:swap-window -t -1 # target one left [+1 right]
+:break-pane    :join-pain -s :6.1   # bring pane 6.1 here
+:move-pane -t :3.2   # send pane to window 3 pane 2
+:swap-window -t -1   # target one left [+1 right]
 _ [option]1 - 5  layouts
 https://gist.github.com/andreyvit/2921703
 
-⌘ . cancel
---
+Mac:  ⌘ . cancel
+Vim:  v character-wise  V line-wise  ctrl-V blockwise
 
-v is character-wise, V is line-wise, ctrl-V is blockwise
+- REGEX ---------------------
+Lookbehind/before         Lookahead/after
+(?<=foo)word              word(?=foo)
+(?<!foo)word  Negative    word(?!foo) Negative
