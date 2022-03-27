@@ -2,6 +2,7 @@ local eventtap = hs.eventtap
 local eventTypes = hs.eventtap.event.types
 local message = require('status-message')
 local cheatsheet = require('cheatsheet')
+local vscodesheet = require('vscodesheet')
 
 local log = hs.logger.new('supermode.lua', 'debug')
 
@@ -27,6 +28,12 @@ function k:entered()
 
     if keyPressed == 'c' then
       cheatsheet:show()
+      closeAllTheThings()
+      return true
+    end
+
+    if keyPressed == 'v' then
+      vscodesheet:show()
       closeAllTheThings()
       return true
     end

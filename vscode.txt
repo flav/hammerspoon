@@ -1,0 +1,31 @@
+# Goto
+  ctrl-]        - Goto definition
+  ctrl-minus    - return
+  cmd-shift-O   - (cmd-r in st) Goto method
+  cmd-shift-.   - breadcrumbs (similar to cmd-r)
+  cmd-l         - `zz` scroll cursor location to viewport mid
+
+# Multi-selection
+  cmd-D         - next
+  cmd-shift-L   - ALL  (cmd-shift-G)
+  opt-shift-I   - split into lines (cmd-shift-L in st)
+
+# Line operations
+  shift-opt-up/down  - duplicate
+  opt-up/down        - move line
+
+# Focus
+  cmd-1         - Editor
+  cmd-B         - Sidebar # hide/show
+  cmd-shift-E   - File Explore
+
+  cmd-J         - Panel # hide/show
+  cmd-shift-Y   - Debug console
+  cmd-shift-U   - Output
+  cmd-shift-M   - Problems
+
+# Trim whitespace
+  cmd-K cmd-X
+
+[side] Activity Bar | Side Bar
+Settings JSON
