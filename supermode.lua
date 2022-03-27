@@ -38,6 +38,12 @@ function k:entered()
       return true
     end
 
+    if keyPressed == '`' then
+      hs.reload()
+      closeAllTheThings()
+      return true
+    end
+
     -- Application launchers
     local applicationLaunchers = {
       ['1'] = "Terminal",

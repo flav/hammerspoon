@@ -13,6 +13,8 @@
 --   units="F"
 -- })
 
+require("hs.ipc")
+hs.ipc.cliInstall()
 
 require("mouseinthemiddle")
 
@@ -23,6 +25,8 @@ require("window-mash")
 require("utc-time")
 
 require("zoom-killer")
+
+hs.loadSpoon('MetarMenu'):start({stationId = 'KARB'})
 
 function sleep(n)
   os.execute("sleep " .. tonumber(n))
