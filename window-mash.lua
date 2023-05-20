@@ -10,6 +10,19 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Right", function()
   moveWindow(true)
 end)
 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Up", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:fullFrame()
+
+  f.x = max.w * 3/32
+  f.w = max.w * 26/32
+  f.y = max.y
+  f.h = max.h * 15/16
+  win:setFrame(f)
+end)
+
 moveWindow = function (isRight)
   local win = hs.window.focusedWindow()
   local f = win:frame()
