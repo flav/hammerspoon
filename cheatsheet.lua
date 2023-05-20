@@ -11,13 +11,13 @@ function script_path()
    return str:match("(.*/)")
 end
 
-local cheatSheetFile = script_path() .. 'cheatsheet.txt'
-local editApplication = "Sublime Text" -- "TextEdit"
+local editApplication = "Code" -- "TextEdit"
 
 local cheatsheet = {}
 
-cheatsheet.new = function()
-  local buildParts = function()
+cheatsheet.new = function(cheatFile)
+  local cheatSheetFile = script_path() .. cheatFile
+  local buildParts = function(cheatSheetFile)
     local frame = screen.primaryScreen():frame()
     local messageText = io.open(cheatSheetFile, "r"):read('*all')
 
@@ -70,7 +70,7 @@ cheatsheet.new = function()
     show = function(self)
       self:hide()
 
-      self.background, self.text = self._buildParts()
+      self.background, self.text = self._buildParts(cheatSheetFile)
       self.background:show()
       self.text:show()
 
@@ -103,4 +103,4 @@ cheatsheet.new = function()
   }
 end
 
-return cheatsheet.new()
+return cheatsheet

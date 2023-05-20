@@ -1,0 +1,11 @@
+b / w	Previous/next word
+
+zz	Center this line
+H   M   L
+
+/search -  n ext N prev
+* search word    # search backward
+
+u undo / ctr-R redu
+
+https://devhints.io/vim

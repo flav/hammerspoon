@@ -1,8 +1,10 @@
 local eventtap = hs.eventtap
 local eventTypes = hs.eventtap.event.types
 local message = require('status-message')
-local cheatsheet = require('cheatsheet')
-local vscodesheet = require('vscodesheet')
+local cs = require('cheatsheet')
+local cheatsheet = cs.new('cheatsheet.txt')
+local vscodesheet = cs.new('vscode.txt')
+local vimsheet = cs.new('vim.txt')
 
 local log = hs.logger.new('supermode.lua', 'debug')
 
@@ -34,6 +36,12 @@ function k:entered()
 
     if keyPressed == 'v' then
       vscodesheet:show()
+      closeAllTheThings()
+      return true
+    end
+
+    if keyPressed == 'i' then
+      vimsheet:show()
       closeAllTheThings()
       return true
     end

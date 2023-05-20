@@ -6,7 +6,7 @@
   cmd-l         - `zz` scroll cursor location to viewport mid
 
 # Multi-selection
-  cmd-D         - next
+  cmd-D         - next (cmd-u undo last)
   cmd-shift-L   - ALL  (cmd-shift-G)
   opt-shift-I   - split into lines (cmd-shift-L in st)
 
@@ -17,12 +17,14 @@
 # Focus
   cmd-1         - Editor
   cmd-B         - Sidebar # hide/show
-  cmd-shift-E   - File Explore
+  cmd-shift-E   - File Explore (toggle to Editor)
 
   cmd-J         - Panel # hide/show
   cmd-shift-Y   - Debug console
   cmd-shift-U   - Output
   cmd-shift-M   - Problems
+
+  ctrl-cmd-left / ctrl-cmd-right split Editor
 
 # Trim whitespace
   cmd-K cmd-X
