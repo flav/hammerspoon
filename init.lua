@@ -22,6 +22,8 @@ hs.loadSpoon("MetarMenu"):start({
     stationId = "KARB"
 })
 
+require("utc-time")
+
 function sleep(n)
     os.execute("sleep " .. tonumber(n))
 end
