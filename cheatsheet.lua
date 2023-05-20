@@ -16,9 +16,12 @@ local cheatsheet = {}
 
 cheatsheet.new = function(cheatFile)
     local cheatSheetFile = script_path() .. cheatFile
-    local buildParts = function(cheatSheetFile)
-        local frame = screen.primaryScreen():frame()
+    local buildParts = function(self, cheatSheetFile)
+        -- https://www.hammerspoon.org/docs/hs.screen.html#mainScreen
+        local frame = screen.mainScreen():frame()
         local messageText = io.open(cheatSheetFile, "r"):read('*all')
+
+        messageText = self.preProcessMessageText(messageText)
 
         local styledTextAttributes = {
             font = {
@@ -37,16 +40,16 @@ cheatsheet.new = function(cheatFile)
 
         local styledTextSize = drawing.getTextDrawingSize(styledText)
         local textRect = {
-            x = (frame.w / 2) - (styledTextSize.w / 2) - 20,
-            y = (frame.h / 2) - (styledTextSize.h / 2),
+            x = frame.x + (frame.w / 2) - (styledTextSize.w / 2) + 200,
+            y = frame.y + (frame.h / 2) - (styledTextSize.h / 2),
             w = ((frame.w * (15 / 16)) / 2) - 40, -- styledTextSize.w + 40,
             h = styledTextSize.h + 40
         }
         local text = drawing.text(textRect, styledText) -- :setAlpha(0.9)
 
         local background = drawing.rectangle({
-            x = frame.w * (1 / 32),
-            y = frame.h * (1 / 32),
+            x = frame.x + frame.w * (1 / 32),
+            y = frame.y + frame.h * (1 / 32),
             w = frame.w * (15 / 16),
             h = frame.h * (15 / 16)
 
@@ -73,10 +76,13 @@ cheatsheet.new = function(cheatFile)
         _buildParts = buildParts,
         _editCheatsheet = editCheatsheet,
         _keyboard = nil,
+        preProcessMessageText = function(message)
+            return message
+        end,
         show = function(self)
             self:hide()
 
-            self.background, self.text = self._buildParts(cheatSheetFile)
+            self.background, self.text = self:_buildParts(cheatSheetFile)
             self.background:show()
             self.text:show()
 

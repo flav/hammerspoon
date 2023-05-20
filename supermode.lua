@@ -5,6 +5,7 @@ local cs = require('cheatsheet')
 local cheatsheet = cs.new('cheatsheet.txt')
 local vscodesheet = cs.new('vscode.txt')
 local vimsheet = cs.new('vim.txt')
+local utcsheet = require('utcsheet')
 
 local log = hs.logger.new('supermode.lua', 'debug')
 
@@ -40,6 +41,12 @@ function k:entered()
 
         if keyPressed == 'i' then
             vimsheet:show()
+            closeAllTheThings()
+            return true
+        end
+
+        if keyPressed == 't' then
+            utcsheet:show()
             closeAllTheThings()
             return true
         end
