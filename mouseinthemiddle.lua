@@ -28,7 +28,10 @@ function mouseCenter()
     mouseCircle:show()
 
     -- Set a timer to delete the circle after a few seconds
-    mouseCircleTimer = hs.timer.doAfter(2, function() mouseCircle:delete() end)
+    mouseCircleTimer = hs.timer.doAfter(1, function()
+        mouseCircle:delete()
+        mouseCircle = nil
+     end)
 
 end
 
