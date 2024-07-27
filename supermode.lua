@@ -61,7 +61,7 @@ function k:entered()
         local applicationLaunchers = {
             ['1'] = "Terminal",
             ['2'] = "Google Chrome",
-            ['3'] = "Sublime Text",
+            ['3'] = "Visual Studio Code",
             ['4'] = 'TextEdit',
             ['5'] = 'Dash',
             ['6'] = 'Simplenote',
