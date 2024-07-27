@@ -18,11 +18,12 @@ require("window-mash")
 require("utc-time")
 require("zoom-killer")
 
-hs.loadSpoon("MetarMenu"):start({
-    stationId = "KARB"
-})
+require('pdfview')
+-- hs.loadSpoon("MetarMenu"):start({
+--    stationId = "KARB"
+-- })
 
-require("utc-time")
+-- require("utc-time")
 
 function sleep(n)
     os.execute("sleep " .. tonumber(n))
