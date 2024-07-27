@@ -6,6 +6,8 @@ local cheatsheet = cs.new('cheatsheet.txt')
 local vscodesheet = cs.new('vscode.txt')
 local vimsheet = cs.new('vim.txt')
 local utcsheet = require('utcsheet')
+local pv = require('pdfview')
+local vscodePdf = pv.new('keyboard-shortcuts-macos.pdf')
 
 local log = hs.logger.new('supermode.lua', 'debug')
 
@@ -35,6 +37,12 @@ function k:entered()
 
         if keyPressed == 'v' then
             vscodesheet:show()
+            closeAllTheThings()
+            return true
+        end
+
+        if keyPressed == 'p' then
+            vscodePdf:show()
             closeAllTheThings()
             return true
         end
