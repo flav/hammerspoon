@@ -3,7 +3,7 @@
   ctrl-minus    - return
   cmd-shift-O   - (cmd-r in st) Goto method
   cmd-shift-.   - breadcrumbs (similar to cmd-r)
-  cmd-l         - `zz` scroll cursor location to viewport mid
+  ctrl-l         - `zz` scroll cursor location to viewport mid
 
 # Multi-selection
   cmd-D         - next (cmd-u undo last)
@@ -23,8 +23,10 @@
   cmd-shift-Y   - Debug console
   cmd-shift-U   - Output
   cmd-shift-M   - Problems
+    terminal ctrl-` (shift for new) cmd-[ cmd-]
 
   ctrl-cmd-left / ctrl-cmd-right split Editor
+  cmd-p ctrl-enter to remove preview on file
 
 # Trim whitespace
   cmd-K cmd-X

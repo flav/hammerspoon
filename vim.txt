@@ -1,11 +1,25 @@
 b / w	Previous/next word
+f_ / F_   Find forward/backward to _
+t_ / T_   Fint Till _
 
 zz	Center this line
 H   M   L
 
 /search -  n ext N prev
-* search word    # search backward
+?search - backwards
+* search word    # search word backward
+:noh  - short for nohighlight
 
 u undo / ctr-R redu
+ctrl-o Allow 1 NORMAL mode in INSERT
+
+autocmd :{range}!cmd  :%!python -mjson.tool
+
+
+change case: gU<motion> u U ~
 
 https://devhints.io/vim
+
+:s/foo/bar/   # line
+:%s/foo/bar/g  # global
+:6,12s/foo/bar/ # lines 6 through 12
