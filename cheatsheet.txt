@@ -7,12 +7,12 @@ alt-b alt-f  by word
 
 - TMUX ---------------------
 tmux new -s foo                    tmux at -t foo
-_ is prefix ^g                     _w window list
-_o rotate cursor                   _^o rotate split
-_{ _} rotate/move splits
+o rotate cursor                    w window list
+{ } rotate/move splits             ^o rotate split
+" horiz / % vert split             ⌥1 2 3 4 split layouts
 
 (-s|-t <session:window.pane> source/target)
-:break-pane    :join-pain -s :6.1   # bring pane 6.1 here
+:break-pane    :join-pane -s :6.1   # bring pane 6.1 here
 :move-pane -t :3.2   # send pane to window 3 pane 2
 :swap-window -t -1   # target one left [+1 right]
 _ [option]1 - 5  layouts
