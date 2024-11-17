@@ -46,10 +46,10 @@ hs.hotkey.bind("ctrl", "[", function()
 end)
 
 -- http://thume.ca/2016/07/16/advanced-hackery-with-the-hammerspoon-window-manager/
-local hints = require "hs.hints"
-hs.hotkey.bind({"ctrl"}, "y", nil, function()
-    hints.windowHints()
-end)
+-- local hints = require "hs.hints"
+-- hs.hotkey.bind({"ctrl"}, "y", nil, function()
+--     hints.windowHints()
+-- end)
 
 hs.notify.new({
     title = "Hammerspoon",
